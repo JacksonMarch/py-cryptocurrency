@@ -14,7 +14,7 @@ from app.main import cryptocurrency_action
     ]
 )
 def test_cryptocurrency_action(
-        mock_prediction: str,
+        mock_prediction: int | float,
         current_rate: float,
         predicted_rate: float,
         expected_action: str
@@ -22,5 +22,3 @@ def test_cryptocurrency_action(
     mock_prediction.return_value = predicted_rate
     result = cryptocurrency_action(current_rate)
     assert result == expected_action
-
-
